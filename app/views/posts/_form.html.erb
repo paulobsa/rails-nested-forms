@@ -16,12 +16,14 @@
     <%= form.text_field :title, id: :post_title %>
   </div>
 
-  <%= form.fields_for :comments do |comments_form| %>
-    <%= comments_form.label :text %>
-    <%= comments_form.text_field :text %>
-  <% end %>
+  <%= submit_tag "Add Comment", :type =>  "button", :id => "addComment", :onclick => 'addCommentField()' %>
 
+  <br />
+    <div id="commentsHeader" style="display:none"> Comments: </div>
+    <ul id="myList">
+    </ul>
+  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Inserir Post" %>
   </div>
 <% end %>
