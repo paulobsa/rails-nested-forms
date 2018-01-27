@@ -23,20 +23,21 @@
     Comments:
   <% end %>
   <%= form.fields_for :comments do |comments_form| %> 
-	<li>
+	
     <%= comments_form.label :text %>
 		<%= comments_form.text_field :text, id: :comment_text %>
     REMOVE: <%= comments_form.check_box '_destroy' %>
-	</li>
+	
   <% end %>
 
-  <%= submit_tag "Add Comment", :type =>  "button", :id => "addComment", :onclick => 'addCommentField()' %>
+  
 
   <br />
     <ul id="myList">
     </ul>
   
   <div class="actions">
+    <%= submit_tag "Add Comment", :type =>  "button", :id => "addComment", :onclick => 'addCommentField()' %>
     <%= form.submit "Inserir Post" %>
   </div>
 
