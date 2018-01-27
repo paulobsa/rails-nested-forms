@@ -19,12 +19,22 @@
     <%= form.text_field :title, id: :post_title %>
   </div>
 
+  <% if !@post.comments.empty? %>
+    Comments:
+  <% end %>
   <%= form.fields_for :comments do |comments_form| %> 
-	<li><%= comments_form.label :text %>
+	<li>
+    <%= comments_form.label :text %>
 		<%= comments_form.text_field :text, id: :comment_text %>
     REMOVE: <%= comments_form.check_box '_destroy' %>
 	</li>
   <% end %>
+
+  <%= submit_tag "Add Comment", :type =>  "button", :id => "addComment", :onclick => 'addCommentField()' %>
+
+  <br />
+    <ul id="myList">
+    </ul>
   
   <div class="actions">
     <%= form.submit "Inserir Post" %>
