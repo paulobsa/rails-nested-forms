@@ -20,9 +20,9 @@
   </div>
 
   <%= form.fields_for :comments do |comments_form| %> 
-	<li>
-		<%= comments_form.label :text %>
+	<li><%= comments_form.label :text %>
 		<%= comments_form.text_field :text, id: :comment_text %>
+    REMOVE: <%= comments_form.check_box '_destroy' %>
 	</li>
   <% end %>
   
